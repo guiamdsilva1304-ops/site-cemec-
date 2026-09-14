@@ -1,21 +1,21 @@
 /* ============================================
    CEMEC — Centro de Estudos de Mercado de Capitais
-   Design concept: capital-markets ledger / bond
-   certificate — ink-green, brass, aged paper.
+   Design concept: capital-markets ledger, built
+   around the real brand navy from the CEMEC logo.
    ============================================ */
 
 :root {
-  --paper: #F3EEE2;
-  --paper-dim: #EAE1CB;
-  --ink: #16241D;
-  --ink-soft: #3B4A40;
-  --forest: #1F3D30;
-  --forest-dark: #142720;
+  --paper: #F5F6F8;
+  --paper-dim: #E7EAED;
+  --ink: #11304F;
+  --ink-soft: #48607A;
+  --navy: #11304F;
+  --navy-deep: #0A2038;
   --brass: #9C7A2E;
   --brass-light: #C7A54B;
-  --rule: #C9BFA0;
-  --rule-on-dark: rgba(243, 238, 226, 0.22);
-  --white: #FBF9F3;
+  --rule: #D7DBE0;
+  --rule-on-dark: rgba(255, 255, 255, 0.22);
+  --white: #FFFFFF;
 
   --font-display: "Fraunces", Georgia, serif;
   --font-body: "Inter", -apple-system, Segoe UI, sans-serif;
@@ -80,14 +80,14 @@ a { color: inherit; }
 }
 
 .btn-primary {
-  background: var(--forest);
+  background: var(--navy);
   color: var(--white);
 }
-.btn-primary:hover { background: var(--forest-dark); }
+.btn-primary:hover { background: var(--navy-deep); }
 
 .btn-on-dark.btn-primary {
   background: var(--brass);
-  color: var(--forest-dark);
+  color: var(--navy-deep);
 }
 .btn-on-dark.btn-primary:hover { background: var(--brass-light); }
 
@@ -122,7 +122,7 @@ button:focus-visible {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(243, 238, 226, 0.92);
+  background: rgba(245, 246, 248, 0.92);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--rule);
 }
@@ -143,14 +143,7 @@ button:focus-visible {
   margin-right: auto;
 }
 
-.brand-mark { width: 26px; height: 26px; color: var(--forest); flex-shrink: 0; }
-
-.brand-name {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
+.brand-mark { height: 32px; width: auto; flex-shrink: 0; display: block; }
 
 .main-nav { display: flex; gap: 28px; }
 
@@ -194,7 +187,7 @@ button:focus-visible {
   position: absolute;
   inset: 0;
   z-index: 0;
-  opacity: 0.5;
+  opacity: 0.6;
   background-image: repeating-linear-gradient(
       115deg,
       var(--paper-dim) 0px,
@@ -243,7 +236,7 @@ button:focus-visible {
 .ticker-strip {
   position: relative;
   z-index: 1;
-  background: var(--forest);
+  background: var(--navy);
   border-top: 1px solid var(--rule-on-dark);
 }
 
@@ -264,7 +257,7 @@ button:focus-visible {
   color: var(--brass-light);
 }
 
-.ticker-label { font-size: 0.85rem; color: rgba(251, 249, 243, 0.75); }
+.ticker-label { font-size: 0.85rem; color: rgba(255, 255, 255, 0.75); }
 
 .ticker-rule { width: 1px; height: 20px; background: var(--rule-on-dark); }
 
@@ -273,15 +266,15 @@ button:focus-visible {
 .section-tight { padding: 48px 0; }
 
 .section-dark {
-  background: var(--forest);
+  background: var(--navy);
   color: var(--white);
 }
-.section-dark p { color: rgba(251, 249, 243, 0.78); }
+.section-dark p { color: rgba(255, 255, 255, 0.78); }
 
 .section-title-dark { color: var(--white); }
 
 .section-lead { max-width: 56ch; font-size: 1.05rem; margin-bottom: 48px; }
-.section-dark .section-lead { color: rgba(251, 249, 243, 0.78); }
+.section-dark .section-lead { color: rgba(255, 255, 255, 0.78); }
 
 /* ---------- About ---------- */
 .about-grid {
@@ -309,7 +302,7 @@ button:focus-visible {
   color: var(--brass-light);
 }
 
-.ledger-desc { color: rgba(251, 249, 243, 0.82); max-width: 56ch; }
+.ledger-desc { color: rgba(255, 255, 255, 0.82); max-width: 56ch; }
 
 /* ---------- Benefits ---------- */
 .benefits-grid {
@@ -401,10 +394,10 @@ button:focus-visible {
 
 .contact-form button { margin-top: 20px; align-self: flex-start; }
 
-.form-note { font-size: 0.9rem; margin: 10px 0 0; min-height: 1.2em; color: var(--forest); }
+.form-note { font-size: 0.9rem; margin: 10px 0 0; min-height: 1.2em; color: var(--navy); }
 
 /* ---------- Footer ---------- */
-.site-footer { border-top: 1px solid var(--rule); padding: 40px 0; }
+.site-footer { background: var(--navy); padding: 40px 0; }
 
 .footer-row {
   display: flex;
@@ -414,9 +407,10 @@ button:focus-visible {
   gap: 16px;
 }
 
-.footer-brand { display: flex; flex-direction: column; gap: 4px; }
-.footer-tag { font-size: 0.85rem; color: var(--ink-soft); }
-.footer-copy { font-size: 0.85rem; color: var(--ink-soft); margin: 0; max-width: none; }
+.footer-brand { display: flex; align-items: center; gap: 14px; }
+.footer-brand .brand-mark { height: 26px; }
+.footer-tag { font-size: 0.85rem; color: rgba(255, 255, 255, 0.68); }
+.footer-copy { font-size: 0.85rem; color: rgba(255, 255, 255, 0.68); margin: 0; max-width: none; }
 
 /* ============================================
    Responsive
